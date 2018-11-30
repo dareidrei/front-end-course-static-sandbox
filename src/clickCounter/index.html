@@ -16,11 +16,27 @@
       <div class="info">
         <div>Click counter</div>
         <div class="m-t">
+          <span class="info-key">Max Value:</span><span id="max-value" class="text-accent">0</span>
+        </div>
+
+        <div class="m-t">
           <span class="info-key">clicks:</span><span id="click-value" class="text-accent">0</span>
         </div>
+
+        <div class="m-t">
+          <span class="info-key">clicks left:</span
+          ><span id="left-value" class="text-accent">0</span>
+        </div>
+
+        <div class="m-t">
+          <span class="info-key">step:</span><span id="click-step" class="text-accent">0</span>
+        </div>
       </div>
-      <button id="click-btn" class="d-block btn-primary m-t">Click</button>
-      <button id="click-reset" class="d-block btn-primary m-t">Reset</button>
+
+      <button id="click-btn" class="d-block width-button-primary btn-primary m-t">Click</button>
+      <button id="reset-btn" class="d-block width-button-primary btn-primary m-t">Reset</button>
+      <button id="increaseStep-btn" class="d-block btn-primary m-t">Increase Step</button>
+      <button id="increaseMax-btn" class="d-block btn-primary m-t">Increase Max</button>
     </div>
   </body>
 </html>
