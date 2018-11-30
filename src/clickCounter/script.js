@@ -7,16 +7,20 @@ const maxValue = document.getElementById('max-value')
 const LeftValue = document.getElementById('left-value')
 const clickStep = document.getElementById('click-step')
 
-const TWENTY = 20
+const MAX_NUMBER = 20
+const CLICKS = 0
+const STEP = 1
 
-let clicks = 0
-let step = 1
-let maxNumber = TWENTY
+let clicks = CLICKS
+let step = STEP
+
+let maxNumber = MAX_NUMBER
 maxValue.innerHTML = maxNumber
 LeftValue.innerHTML = maxNumber - clicks
+clickStep.innerHTML = STEP
 
 clickBtn.onclick = function() {
-	if (clicks < maxNumber) {
+	if (clicks + step < maxNumber) {
 		clicks = clicks + step
 	} else {
 		maxValue.innerHTML = 'max value reached'
@@ -30,9 +34,9 @@ clickBtn.onclick = function() {
 resetBtn.onclick = function() {
 	clicks = 0
 	clickValue.innerHTML = clicks
-	maxValue.innerHTML = TWENTY
+	maxValue.innerHTML = MAX_NUMBER
 	clickStep.innerHTML = 1
-	LeftValue.innerHTML = TWENTY
+	LeftValue.innerHTML = maxNumber - clicks
 }
 
 increaseStepBtn.onclick = function() {
@@ -44,5 +48,6 @@ increaseStepBtn.onclick = function() {
 increaseMaxBtn.onclick = function() {
 	maxNumber = maxNumber + 1
 
+	LeftValue.innerHTML = maxNumber - clicks
 	maxValue.innerHTML = maxNumber
 }
