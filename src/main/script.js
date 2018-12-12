@@ -116,9 +116,7 @@ boots.forEach(function(item) {
 	const card = document.createElement('div')
 	card.classList.add('card', 'card-narrow', 'standard-border', 'margin', 'text-center')
 
-	const label = document.createElement('div')
-	label.classList.add('text-center')
-	label.innerHTML = item.label
+	const label = createField(item.label)
 	card.append(label)
 
 	const image = document.createElement('img')
@@ -126,19 +124,13 @@ boots.forEach(function(item) {
 	image.src = item.img
 	card.append(image)
 
-	const color = document.createElement('div')
-	color.classList.add('text-center')
-	color.innerHTML = item.color
+	const color = createField(item.color)
 	card.append(color)
 
-	const size = document.createElement('div')
-	size.classList.add('text-center')
-	size.innerHTML = item.size
+	const size = createField(item.size)
 	card.append(size)
 
-	const sex = document.createElement('div')
-	sex.classList.add('text-center')
-	sex.innerHTML = item.sex
+	const sex = createField(item.sex)
 	card.append(sex)
 
 	if (isHuper(item)) {
@@ -176,6 +168,14 @@ boots.forEach(function(item) {
 
 	container.append(card)
 })
+
+function createField(text) {
+	const field = document.createElement('div')
+	field.classList.add('text-center')
+	field.innerHTML = text
+
+	return field
+}
 
 function isHuper(item) {
 	return (
